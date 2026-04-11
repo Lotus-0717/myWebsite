@@ -151,7 +151,7 @@ const experiences = [
       </div>
       <div class="space-y-4">
         {allPosts.map((post) => (
-          <a href={`/blog/${post.id}`} class="block p-4 rounded-2xl transition-all hover:opacity-90" style="background-color: var(--color-theme-primary); color: var(--color-theme-light);">
+          <a href={`/blog/${post.id}`} class="block p-4 md:p-8 rounded-2xl transition-all hover:opacity-90" style="background-color: var(--color-theme-primary); color: var(--color-theme-light);">
             <h3 class="font-semibold text-lg mb-1">{post.data.title}</h3>
             <p class="text-sm opacity-60 mb-2">{post.data.description}</p>
             <div class="flex items-center gap-3 text-xs opacity-40">
@@ -172,7 +172,7 @@ const experiences = [
         </div>
         <div class="grid gap-4 sm:grid-cols-2">
           {featuredProjects.map((project) => (
-            <a href={`/portfolio/${project.id}`} class="block p-5 rounded-2xl transition-all hover:opacity-90" style="background-color: var(--color-theme-primary); color: var(--color-theme-light);">
+            <a href={`/portfolio/${project.id}`} class="block p-4 md:p-8 rounded-2xl transition-all hover:opacity-90" style="background-color: var(--color-theme-primary); color: var(--color-theme-light);">
               <h3 class="font-semibold text-lg mb-1">{project.data.title}</h3>
               <p class="text-sm opacity-60 mb-3">{project.data.description}</p>
               <div class="flex flex-wrap gap-1">

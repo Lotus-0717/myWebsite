@@ -4,6 +4,24 @@ const year = new Date().getFullYear();
 
 <footer class="border-t mt-auto" style="border-color: var(--color-theme-primary);">
   <div class="max-w-5xl mx-auto px-5 py-6 text-center text-sm opacity-50" style="color: var(--color-theme-light);">
-    <p>&copy; {year} Lotus Yeh. All rights reserved.</p>
+    <p id="footer-text" class="cursor-pointer select-none transition-opacity hover:opacity-80">&copy; {year} Lotus Yeh. All rights reserved.</p>
   </div>
 </footer>
+
+<script>
+  const footerText = document.getElementById('footer-text');
+  const saved = localStorage.getItem('theme');
+  if (saved) document.documentElement.dataset.theme = saved;
+
+  footerText?.addEventListener('click', () => {
+    const current = document.documentElement.dataset.theme;
+    const next = current === 'eva02' ? undefined : 'eva02';
+    if (next) {
+      document.documentElement.dataset.theme = next;
+      localStorage.setItem('theme', next);
+    } else {
+      delete document.documentElement.dataset.theme;
+      localStorage.removeItem('theme');
+    }
+  });
+</script>

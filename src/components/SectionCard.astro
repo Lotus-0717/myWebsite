@@ -6,6 +6,6 @@ interface Props {
 const { class: className = '' } = Astro.props;
 ---
 
-<div class:list={["flex flex-col items-center gap-5 rounded-2xl p-8", className]} style="background-color: var(--color-theme-primary); color: var(--color-theme-light);">
+<div class:list={["flex flex-col items-center gap-5 rounded-2xl p-4 md:p-8", className]} style="background-color: var(--color-theme-primary); color: var(--color-theme-light);">
   <slot />
 </div>
