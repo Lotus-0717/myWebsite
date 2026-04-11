@@ -9,32 +9,99 @@ const navItems = [
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="border-b" style="border-color: var(--color-theme-primary);">
-  <nav class="max-w-5xl mx-auto px-5 py-4 flex items-center justify-between">
-    <a href="/" class="text-xl font-bold transition-colors" style="color: var(--color-theme-secondary);">
-      Lotus Yeh
+<header class="sticky top-0 z-50 border-b" style="border-color: var(--color-theme-primary); background-color: var(--color-theme-dark);">
+  <div class="max-w-5xl mx-auto px-5 py-4 flex items-center justify-between">
+
+    <a href="/" class="text-xl transition-colors" style="font-family: 'StretchPro', sans-serif; letter-spacing: 0.05em; color: var(--color-theme-secondary);">
+      
     </a>
-    <ul class="flex gap-6 text-sm">
+
+    <!-- Toggle button (mobile only) — sits above the nav via z-[51] -->
+    <button
+      id="menu-toggle"
+      aria-label="Toggle menu"
+      class="relative z-[51] h-8 w-8 cursor-pointer sm:hidden"
+    >
+      <span class="menu-top absolute top-[25%] block h-0.5 w-full rounded transition-all duration-300" style="background-color: var(--color-theme-light);"></span>
+      <span class="menu-bot absolute top-[75%] block h-0.5 w-full rounded transition-all duration-300" style="background-color: var(--color-theme-light);"></span>
+    </button>
+
+    <!-- Nav: mobile = fixed drawer, desktop = inline flex -->
+    <nav
+      id="main-nav"
+      class="nav-drawer fixed top-0 right-0 z-50 flex h-screen w-64 translate-x-full flex-col gap-6 p-8 pt-24 transition-transform duration-300 sm:static sm:h-auto sm:w-auto sm:translate-x-0 sm:flex-row sm:gap-6 sm:p-0"
+    >
       {navItems.map(({ href, label }) => (
-        <li>
-          <a
-            href={href}
-            class:list={[
-              'transition-colors font-medium',
-              currentPath === href || (href !== '/' && currentPath.startsWith(href))
-                ? ''
-                : 'opacity-60 hover:opacity-100',
-            ]}
-            style={
-              currentPath === href || (href !== '/' && currentPath.startsWith(href))
-                ? `color: var(--color-theme-secondary);`
-                : `color: var(--color-theme-light);`
-            }
-          >
-            {label}
-          </a>
-        </li>
+        <a
+          href={href}
+          class:list={[
+            'nav-link text-lg font-medium transition-opacity sm:text-sm',
+            currentPath === href || (href !== '/' && currentPath.startsWith(href))
+              ? ''
+              : 'opacity-60 hover:opacity-100',
+          ]}
+          style={
+            currentPath === href || (href !== '/' && currentPath.startsWith(href))
+              ? `color: var(--color-theme-secondary);`
+              : `color: var(--color-theme-light);`
+          }
+        >
+          {label}
+        </a>
       ))}
-    </ul>
-  </nav>
+    </nav>
+
+  </div>
 </header>
+
+<!-- Overlay -->
+<div
+  id="menu-overlay"
+  class="fixed inset-0 z-40 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 sm:hidden"
+></div>
+
+<style>
+  /* Mobile drawer styles */
+  @media (max-width: 639px) {
+    .nav-drawer {
+      background: rgba(15, 15, 15, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-left: 1px solid var(--color-theme-primary);
+    }
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('main-nav');
+  const overlay = document.getElementById('menu-overlay');
+  const topLine = toggle?.querySelector('.menu-top') as HTMLElement | null;
+  const botLine = toggle?.querySelector('.menu-bot') as HTMLElement | null;
+
+  let isOpen = false;
+
+  function openMenu() {
+    isOpen = true;
+    nav?.classList.remove('translate-x-full');
+    overlay?.classList.replace('opacity-0', 'opacity-100');
+    overlay?.classList.replace('pointer-events-none', 'pointer-events-auto');
+    document.body.style.overflow = 'hidden';
+    if (topLine) { topLine.style.top = '50%'; topLine.style.transform = 'rotate(45deg)'; }
+    if (botLine) { botLine.style.top = '50%'; botLine.style.transform = 'rotate(-45deg)'; }
+  }
+
+  function closeMenu() {
+    isOpen = false;
+    nav?.classList.add('translate-x-full');
+    overlay?.classList.replace('opacity-100', 'opacity-0');
+    overlay?.classList.replace('pointer-events-auto', 'pointer-events-none');
+    document.body.style.overflow = '';
+    if (topLine) { topLine.style.top = '25%'; topLine.style.transform = 'rotate(0deg)'; }
+    if (botLine) { botLine.style.top = '75%'; botLine.style.transform = 'rotate(0deg)'; }
+  }
+
+  toggle?.addEventListener('click', () => (isOpen ? closeMenu() : openMenu()));
+  overlay?.addEventListener('click', closeMenu);
+  nav?.querySelectorAll('.nav-link').forEach(link => link.addEventListener('click', closeMenu));
+</script>

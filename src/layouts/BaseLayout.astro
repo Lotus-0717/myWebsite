@@ -25,8 +25,8 @@ const { title, description = '葉書宏的個人網站' } = Astro.props;
       if (saved) document.documentElement.dataset.theme = saved;
     </script>
   </head>
-  <body class="min-h-screen flex flex-col" style="background-color: var(--color-theme-dark); color: var(--color-theme-light); font-family: 'Poppins', 'Noto Sans TC', sans-serif;">
-    <ThemeToggle />
+  <body class="min-h-screen flex flex-col" style="background-color: var(--color-theme-dark); color: var(--color-theme-light); font-family: 'Ubuntu Mono', 'Noto Sans TC', monospace;">
+    <!-- <ThemeToggle /> -->
     <Header />
     <main class="flex-1 max-w-5xl mx-auto w-full px-5 py-8">
       <slot />
