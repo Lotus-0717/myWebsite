@@ -20,17 +20,17 @@ export async function getStaticPaths() {
 const { tag, posts } = Astro.props;
 ---
 
-<BaseLayout title={`#${tag} | Lotus Yeh`} description={`標籤「${tag}」的所有文章`}>
-  <a href="/blog" class="text-sm hover:underline mb-6 inline-block" style="color: var(--color-theme-secondary);">&larr; 返回網誌</a>
+<BaseLayout title={`#${tag} | Lotus Yeh`} description={`All posts tagged "${tag}"`}>
+  <a href="/blog" class="text-sm hover:underline mb-6 inline-block" style="color: var(--color-theme-secondary);">&larr; Back to Blog</a>
   <SecTit text={`#${tag}`} />
-  <p class="opacity-50 mb-8 mt-4">共 {posts.length} 篇文章</p>
+  <p class="opacity-50 mb-8 mt-4">{posts.length} post{posts.length !== 1 ? 's' : ''}</p>
 
   <div class="space-y-4">
     {posts.map((post) => (
       <a href={`/blog/${post.id}`} class="block p-5 rounded-2xl transition-all hover:opacity-90" style="background-color: var(--color-theme-primary); color: var(--color-theme-light);">
         <h2 class="font-semibold mb-1">{post.data.title}</h2>
         <p class="text-sm opacity-60 mb-2">{post.data.description}</p>
-        <time class="text-xs opacity-40">{post.data.pubDate.toLocaleDateString('zh-Hant')}</time>
+        <time class="text-xs opacity-40">{post.data.pubDate.toLocaleDateString('en-US')}</time>
       </a>
     ))}
   </div>

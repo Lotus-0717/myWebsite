@@ -7,7 +7,7 @@ const projects = (await getCollection('portfolio'))
   .sort((a, b) => a.data.sortOrder - b.data.sortOrder);
 ---
 
-<BaseLayout title="作品集 | Lotus Yeh" description="我的作品集">
+<BaseLayout title="Portfolio | Lotus Yeh" description="My portfolio">
   <SecTit text="Portfolio" />
 
   <div class="grid gap-6 sm:grid-cols-2 mt-6">
@@ -22,8 +22,8 @@ const projects = (await getCollection('portfolio'))
               ? 'border: 1px solid var(--color-theme-secondary); color: var(--color-theme-secondary);'
               : 'opacity: 0.5;'
           }>
-            {project.data.status === 'completed' ? '已完成' :
-             project.data.status === 'in-progress' ? '進行中' : '已封存'}
+            {project.data.status === 'completed' ? 'Completed' :
+             project.data.status === 'in-progress' ? 'In Progress' : 'Archived'}
           </span>
         </div>
         <p class="text-sm opacity-60 mb-3">{project.data.description}</p>

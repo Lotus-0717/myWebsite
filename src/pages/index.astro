@@ -14,57 +14,57 @@ const featuredProjects = (await getCollection('portfolio'))
   .sort((a, b) => a.data.sortOrder - b.data.sortOrder);
 
 const skills = [
-  { category: '品牌與策略', items: ['品牌思維', '客戶溝通', '專案主導', '跨部門協作'] },
-  { category: '產品與設計', items: ['UI/UX 審查', '視覺品質判斷', '響應式設計'] },
-  { category: '前端開發', items: ['React', 'TypeScript', 'CSS/SCSS', 'Tailwind', 'Astro'] },
-  { category: 'AI 協作', items: ['Prompt Engineering', 'Claude', 'Cursor', 'v0.dev'] },
-  { category: '工具', items: ['Git', 'Figma', 'Vite'] },
+  { category: 'Brand & Strategy', items: ['Brand Thinking', 'Client Communication', 'Project Leadership', 'Cross-team Collaboration'] },
+  { category: 'Product & Design', items: ['UI/UX Review', 'Visual Quality Judgment', 'Responsive Design'] },
+  { category: 'Frontend', items: ['React', 'TypeScript', 'CSS/SCSS', 'Tailwind', 'Astro'] },
+  { category: 'AI Collaboration', items: ['Prompt Engineering', 'Claude', 'Cursor', 'v0.dev'] },
+  { category: 'Tools', items: ['Git', 'Figma', 'Vite'] },
 ];
 
 const experiences = [
   {
-    company: '禾意數位創意',
-    companySub: 'Catch Design',
+    company: 'Catch Design',
+    companySub: '禾意數位創意',
     start: 'Apr 2021',
     end: 'Dec 2023',
     items: [
-      { title: '提供 UI/UX 設計建議', content: '主動提出改進方案，改善用戶界面和體驗，提高用戶滿意度和互動率。' },
-      { title: '開發小遊戲活動網站', content: '負責從頭到尾的開發工作，不僅注重遊戲本身的互動性，也針對遊戲情境進行了體驗優化。' },
-      { title: '打造品牌形象官網', content: '與設計師緊密合作，確保視覺風格的一致性，並與後端協作開發 API 接口。' },
-      { title: '製作 Landing Page', content: '運用創意設計和技術實現，製作出符合客戶期望的 Landing Page。' },
-      { title: '維護和優化 Vue.js 官網', content: '接手並改進既有的 Vue.js 專案，根據客戶需求進行定制化修改，提高了頁面性能和用戶體驗。' },
+      { title: 'UI/UX Design Consulting', content: 'Proactively proposed UI/UX improvements that enhanced user experience and increased engagement rates.' },
+      { title: 'Interactive Game Microsites', content: 'Led end-to-end development of game-based campaign sites, focusing on interactivity and experience optimization.' },
+      { title: 'Brand Corporate Websites', content: 'Collaborated closely with designers to maintain visual consistency and worked with backend teams on API integration.' },
+      { title: 'Landing Page Development', content: 'Delivered creative and technically sound landing pages aligned with client expectations and campaign goals.' },
+      { title: 'Vue.js Website Maintenance', content: 'Took ownership of existing Vue.js projects, implemented client-requested customizations, and improved performance and UX.' },
     ],
   },
   {
-    company: '全職接案',
-    companySub: 'Freelancer',
+    company: 'Freelancer',
+    companySub: '全職接案',
     start: 'Oct 2019',
     end: 'Apr 2021',
     items: [
-      { title: '以品牌思維主導專案', content: '採用經營者視角主動參與決策，深化對商業策略和管理思維的理解，有效橋接技術實施與業務目標。' },
-      { title: '客戶溝通與設計參與', content: '超越傳統工程師角色，主動參與前期設計和發想階段，確保技術實現與客戶需求高度一致。' },
-      { title: '公益組織網站建置', content: '領導團隊完成公益組織網站全流程建置，包括設計、空間租用及開發，提升組織影響力。' },
-      { title: '汽車品牌線上預購網站', content: '獨立負責切版與 API 串接，實現了流暢的用戶預購體驗，促進銷售增長。' },
-      { title: '日用品品牌繪本遊戲網站', content: '運用 CSS3 實現繪本翻頁效果，並開發JS小遊戲（拖曳分類、走迷宮等），豐富用戶互動，提高用戶停留時間。' },
-      { title: '銀行活動 Landing Page', content: '參與多個銀行活動 Landing Page 的製作，通過創意設計和技術實現，提高活動轉化率。' },
-      { title: '數位行銷公司作品集網站開發', content: '運用 WordPress 實現具有直觀後台管理界面的網站，賦予客戶無需編程知識即可自主更新和編輯作品集的能力。' },
+      { title: 'Brand-driven Project Leadership', content: 'Adopted an owner mindset to actively participate in decisions, bridging technical execution with business objectives.' },
+      { title: 'Client Communication & Design Involvement', content: 'Went beyond the engineering role to join early design and ideation phases, ensuring alignment between tech and client needs.' },
+      { title: 'Non-profit Organization Website', content: 'Led a team through the full lifecycle of a non-profit website, including design, hosting, and development.' },
+      { title: 'Automotive Pre-order Website', content: 'Independently handled frontend markup and API integration, delivering a smooth pre-order experience that drove sales.' },
+      { title: 'Storybook Game Website', content: 'Used CSS3 to create page-turn animations and built JS mini-games (drag-and-drop sorting, maze, etc.) to boost engagement.' },
+      { title: 'Bank Campaign Landing Pages', content: 'Contributed to multiple bank event landing pages, improving conversion rates through creative design and implementation.' },
+      { title: 'Digital Agency Portfolio Site', content: 'Built a WordPress site with an intuitive CMS so clients could update their portfolio without any coding knowledge.' },
     ],
   },
   {
-    company: '法樂數位創意',
-    companySub: 'FLA Digital Creative',
+    company: 'FLA Digital Creative',
+    companySub: '法樂數位創意',
     start: 'Mar 2017',
     end: 'Sep 2019',
     items: [
-      { title: '跨部門協作', content: '積極與企劃和設計團隊溝通協調，確保設計與技術的一致性，提升專案效率與品質。' },
-      { title: '後端協作與API整合', content: '與後端開發團隊緊密合作，實現 API 串接，確保數據的準確傳輸和動態功能。' },
-      { title: '媒體追蹤與分析', content: '根據客戶需求埋設媒體追蹤碼，支持數據分析和用戶行為追蹤，助力精準營銷策略的制定。' },
-      { title: '社群平台整合', content: '實現社群平台 API 串接，加強網站與社群媒體的互動連結，擴大品牌影響力和用戶參與度。' },
+      { title: 'Cross-department Collaboration', content: 'Coordinated with planning and design teams to ensure design-tech consistency and improve project efficiency.' },
+      { title: 'Backend Collaboration & API Integration', content: 'Worked closely with backend developers on API integration to ensure accurate data flow and dynamic functionality.' },
+      { title: 'Media Tracking & Analytics', content: 'Implemented tracking tags per client requirements to support data analysis, user behavior tracking, and targeted marketing.' },
+      { title: 'Social Platform Integration', content: 'Integrated social media APIs to strengthen the connection between websites and social channels, expanding brand reach.' },
     ],
   },
   {
-    company: '淡江大學 歷史系',
-    companySub: 'Department of History, Tamkang University',
+    company: 'Tamkang University',
+    companySub: 'Department of History',
     start: 'Jul 2011',
     end: 'Mar 2016',
     items: [],
@@ -72,15 +72,15 @@ const experiences = [
 ];
 ---
 
-<BaseLayout title="葉書宏 | Lotus Yeh" description="葉書宏的個人網站 — 前端工程師">
+<BaseLayout title="Lotus Yeh" description="Lotus Yeh's personal website — Frontend Engineer">
   <div class="flex flex-col gap-10">
 
     <!-- Profile -->
     <SectionCard>
       <GlitchPhoto client:load src="/pic.png" />
       <div class="text-center">
-        <p class="text-4xl font-bold">葉書宏</p>
-        <p class="text-2xl font-bold">Steven Yeh</p>
+        <p class="text-4xl font-bold">Lotus Yeh</p>
+        <p class="text-2xl font-bold">葉書宏</p>
       </div>
       <div class="flex flex-col items-start gap-1">
         <div class="flex items-center gap-3">
@@ -89,7 +89,7 @@ const experiences = [
         </div>
         <div class="flex items-center gap-3">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
-          <p class="text-xl">台灣, 新北市</p>
+          <p class="text-xl">New Taipei City, Taiwan</p>
         </div>
       </div>
     </SectionCard>
@@ -147,7 +147,7 @@ const experiences = [
     <div>
       <SecTit text="Blog" />
       <div class="flex items-center justify-end mb-4">
-        <a href="/blog" class="text-sm hover:underline" style="color: var(--color-theme-secondary);">查看全部 &rarr;</a>
+        <a href="/blog" class="text-sm hover:underline" style="color: var(--color-theme-secondary);">View all &rarr;</a>
       </div>
       <div class="space-y-4">
         {allPosts.map((post) => (
@@ -155,7 +155,7 @@ const experiences = [
             <h3 class="font-semibold text-lg mb-1">{post.data.title}</h3>
             <p class="text-sm opacity-60 mb-2">{post.data.description}</p>
             <div class="flex items-center gap-3 text-xs opacity-40">
-              <time>{post.data.pubDate.toLocaleDateString('zh-Hant')}</time>
+              <time>{post.data.pubDate.toLocaleDateString('en-US')}</time>
               <span class="px-2 py-0.5 rounded" style="background-color: var(--color-theme-secondary); color: var(--color-theme-dark);">{post.data.category}</span>
             </div>
           </a>
@@ -168,7 +168,7 @@ const experiences = [
       <div>
         <SecTit text="Portfolio" />
         <div class="flex items-center justify-end mb-4">
-          <a href="/portfolio" class="text-sm hover:underline" style="color: var(--color-theme-secondary);">查看全部 &rarr;</a>
+          <a href="/portfolio" class="text-sm hover:underline" style="color: var(--color-theme-secondary);">View all &rarr;</a>
         </div>
         <div class="grid gap-4 sm:grid-cols-2">
           {featuredProjects.map((project) => (

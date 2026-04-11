@@ -4,16 +4,16 @@ import SecTit from '../../components/SecTit.astro';
 
 const tools = [
   {
-    title: '字數計算器',
-    description: '快速計算中英文字數、字元數',
+    title: 'Word Counter',
+    description: 'Quickly count words and characters in any language',
     href: '/tools/word-counter',
   },
 ];
 ---
 
-<BaseLayout title="工具 | Lotus Yeh" description="一些實用的小工具">
+<BaseLayout title="Tools | Lotus Yeh" description="Some handy little tools">
   <SecTit text="Tools" />
-  <p class="opacity-50 mb-8 mt-4">一些 vibe coding 後產出的小工具，歡迎自由使用。</p>
+  <p class="opacity-50 mb-8 mt-4">Some small tools born from vibe coding — feel free to use them.</p>
 
   <div class="grid gap-4 sm:grid-cols-2">
     {tools.map((tool) => (

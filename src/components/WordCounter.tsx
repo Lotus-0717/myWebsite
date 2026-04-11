@@ -12,7 +12,7 @@ export default function WordCounter() {
       <textarea
         value={text}
         onChange={(e) => setText(e.target.value)}
-        placeholder="在這裡輸入或貼上文字..."
+        placeholder="Type or paste your text here..."
         className="w-full h-48 p-4 rounded-lg resize-y focus:outline-none"
         style={{
           backgroundColor: 'var(--color-theme-dark)',
@@ -23,9 +23,9 @@ export default function WordCounter() {
       />
       <div className="mt-4 grid grid-cols-3 gap-4 text-center">
         {[
-          { value: charCount, label: '字元' },
-          { value: charNoSpaces, label: '字元（不含空白）' },
-          { value: wordCount, label: '詞數' },
+          { value: charCount, label: 'Characters' },
+          { value: charNoSpaces, label: 'Characters (no spaces)' },
+          { value: wordCount, label: 'Words' },
         ].map((stat) => (
           <div
             key={stat.label}

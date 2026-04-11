@@ -16,14 +16,14 @@ const { Content } = await render(post);
 ---
 
 <BaseLayout title={`${post.data.title} | Lotus Yeh`} description={post.data.description}>
-  <a href="/blog" class="text-sm hover:underline mb-6 inline-block" style="color: var(--color-theme-secondary);">&larr; 返回網誌</a>
+  <a href="/blog" class="text-sm hover:underline mb-6 inline-block" style="color: var(--color-theme-secondary);">&larr; Back to Blog</a>
 
   <SectionCard>
     <article class="w-full">
       <header class="mb-8">
         <h1 class="text-3xl font-bold mb-2">{post.data.title}</h1>
         <div class="flex items-center gap-3 text-sm opacity-60">
-          <time>{post.data.pubDate.toLocaleDateString('zh-Hant')}</time>
+          <time>{post.data.pubDate.toLocaleDateString('en-US')}</time>
           <a href={`/categories/${post.data.category}`} class="px-2 py-0.5 rounded" style="background-color: var(--color-theme-secondary); color: var(--color-theme-dark);">
             {post.data.category}
           </a>

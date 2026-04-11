@@ -1,6 +1,6 @@
 ---
-title: "個人網站"
-description: "使用 Astro + React + Tailwind CSS 建置的個人網站與部落格。"
+title: "Personal Website"
+description: "A personal website and blog built with Astro, React, and Tailwind CSS."
 tech: ["Astro", "React", "Tailwind CSS", "TypeScript"]
 url: "https://example.com"
 repo: "https://github.com/example/website"
@@ -9,14 +9,14 @@ sortOrder: 1
 status: "completed"
 ---
 
-## 關於這個專案
+## About This Project
 
-這是我的個人網站，包含網誌、作品集與一些小工具。
+This is my personal website, featuring a blog, portfolio, and a few small tools.
 
-### 功能
+### Features
 
-- 網誌系統，支援標籤與分類篩選
-- 作品集展示
-- 小工具頁面
-- 響應式設計
-- 深色模式（規劃中）
+- Blog system with tag and category filtering
+- Portfolio showcase
+- Tools page
+- Responsive design
+- Dark mode (planned)
