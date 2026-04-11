@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SecTit from '../../components/SecTit.astro';
+
+const tools = [
+  {
+    title: '字數計算器',
+    description: '快速計算中英文字數、字元數',
+    href: '/tools/word-counter',
+  },
+];
+---
+
+<BaseLayout title="工具 | Lotus Yeh" description="一些實用的小工具">
+  <SecTit text="Tools" />
+  <p class="opacity-50 mb-8 mt-4">一些 vibe coding 後產出的小工具，歡迎自由使用。</p>
+
+  <div class="grid gap-4 sm:grid-cols-2">
+    {tools.map((tool) => (
+      <a href={tool.href} class="block p-5 rounded-2xl transition-all hover:opacity-90" style="background-color: var(--color-theme-primary); color: var(--color-theme-light);">
+        <h2 class="font-semibold mb-1">{tool.title}</h2>
+        <p class="text-sm opacity-60">{tool.description}</p>
+      </a>
+    ))}
+  </div>
+</BaseLayout>

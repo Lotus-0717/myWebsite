@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SecTit from '../../components/SecTit.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const allTags = [...new Set(allPosts.flatMap((p) => p.data.tags))].sort();
+const allCategories = [...new Set(allPosts.map((p) => p.data.category))].sort();
+---
+
+<BaseLayout title="網誌 | Lotus Yeh" description="所有網誌文章">
+  <SecTit text="Blog" />
+
+  <!-- Filters -->
+  <div class="mb-8 flex flex-wrap gap-4 text-sm mt-6">
+    <div>
+      <span class="opacity-50 mr-2">分類：</span>
+      {allCategories.map((cat) => (
+        <a href={`/categories/${cat}`} class="inline-block mr-2 px-3 py-1 rounded transition-colors" style="background-color: var(--color-theme-primary); color: var(--color-theme-light);">
+          {cat}
+        </a>
+      ))}
+    </div>
+    <div>
+      <span class="opacity-50 mr-2">標籤：</span>
+      {allTags.map((tag) => (
+        <a href={`/tags/${tag}`} class="inline-block mr-2 px-3 py-1 rounded transition-colors border" style="border-color: var(--color-theme-secondary); color: var(--color-theme-secondary);">
+          #{tag}
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <!-- Post List -->
+  <div class="space-y-4">
+    {allPosts.map((post) => (
+      <a href={`/blog/${post.id}`} class="block p-5 rounded-2xl transition-all hover:opacity-90" style="background-color: var(--color-theme-primary); color: var(--color-theme-light);">
+        <h2 class="text-lg font-semibold mb-1">{post.data.title}</h2>
+        <p class="text-sm opacity-60 mb-2">{post.data.description}</p>
+        <div class="flex items-center gap-3 text-xs opacity-50">
+          <time>{post.data.pubDate.toLocaleDateString('zh-Hant')}</time>
+          <span class="px-2 py-0.5 rounded" style="background-color: var(--color-theme-secondary); color: var(--color-theme-dark);">{post.data.category}</span>
+          {post.data.tags.map((tag) => (
+            <span class="px-2 py-0.5 border rounded" style="border-color: var(--color-theme-secondary); color: var(--color-theme-secondary);">#{tag}</span>
+          ))}
+        </div>
+      </a>
+    ))}
+  </div>
+</BaseLayout>

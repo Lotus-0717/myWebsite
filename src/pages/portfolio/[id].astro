@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionCard from '../../components/SectionCard.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('portfolio');
+  return projects.map((project) => ({
+    params: { id: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+---
+
+<BaseLayout title={`${project.data.title} | Lotus Yeh`} description={project.data.description}>
+  <a href="/portfolio" class="text-sm hover:underline mb-6 inline-block" style="color: var(--color-theme-secondary);">&larr; 返回作品集</a>
+
+  <SectionCard>
+    <article class="w-full">
+      <header class="mb-8">
+        <h1 class="text-3xl font-bold mb-2">{project.data.title}</h1>
+        <p class="opacity-60 mb-4">{project.data.description}</p>
+
+        <div class="flex flex-wrap gap-2 mb-4">
+          {project.data.tech.map((t) => (
+            <span class="px-2 py-0.5 text-xs border rounded" style="border-color: var(--color-theme-secondary); color: var(--color-theme-secondary);">{t}</span>
+          ))}
+        </div>
+
+        <div class="flex gap-4 text-sm">
+          {project.data.url && (
+            <a href={project.data.url} target="_blank" rel="noopener noreferrer" class="hover:underline" style="color: var(--color-theme-secondary);">
+              線上展示 &nearr;
+            </a>
+          )}
+          {project.data.repo && (
+            <a href={project.data.repo} target="_blank" rel="noopener noreferrer" class="hover:underline" style="color: var(--color-theme-secondary);">
+              原始碼 &nearr;
+            </a>
+          )}
+        </div>
+      </header>
+      <div class="prose prose-invert max-w-none">
+        <Content />
+      </div>
+    </article>
+  </SectionCard>
+</BaseLayout>

@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionCard from '../../components/SectionCard.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { id: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout title={`${post.data.title} | Lotus Yeh`} description={post.data.description}>
+  <a href="/blog" class="text-sm hover:underline mb-6 inline-block" style="color: var(--color-theme-secondary);">&larr; 返回網誌</a>
+
+  <SectionCard>
+    <article class="w-full">
+      <header class="mb-8">
+        <h1 class="text-3xl font-bold mb-2">{post.data.title}</h1>
+        <div class="flex items-center gap-3 text-sm opacity-60">
+          <time>{post.data.pubDate.toLocaleDateString('zh-Hant')}</time>
+          <a href={`/categories/${post.data.category}`} class="px-2 py-0.5 rounded" style="background-color: var(--color-theme-secondary); color: var(--color-theme-dark);">
+            {post.data.category}
+          </a>
+        </div>
+        <div class="flex flex-wrap gap-2 mt-3">
+          {post.data.tags.map((tag) => (
+            <a href={`/tags/${tag}`} class="px-2 py-0.5 text-xs border rounded" style="border-color: var(--color-theme-secondary); color: var(--color-theme-secondary);">
+              #{tag}
+            </a>
+          ))}
+        </div>
+      </header>
+      <div class="prose prose-invert max-w-none">
+        <Content />
+      </div>
+    </article>
+  </SectionCard>
+</BaseLayout>
