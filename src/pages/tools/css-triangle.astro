@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionCard from '../../components/SectionCard.astro';
+import SecTit from '../../components/SecTit.astro';
+import CssTriangleGenerator from '../../components/CssTriangleGenerator.tsx';
+---
+
+<BaseLayout title="CSS Triangle Generator | Lotus Yeh" description="Generate CSS-only triangles using the border trick — pick direction, size, and color">
+  <a href="/tools" class="text-sm hover:underline mb-6 inline-block" style="color: var(--color-theme-secondary);">&larr; Back to Tools</a>
+  <SecTit text="CSS Triangle Generator" />
+  <div class="mt-6">
+    <SectionCard>
+      <div class="w-full">
+        <CssTriangleGenerator client:load />
+      </div>
+    </SectionCard>
+  </div>
+</BaseLayout>

@@ -38,8 +38,15 @@
 }
 
 /* Override typography plugin bullet color — must be outside @layer to win the cascade */
-.prose :where(ul > li):not(:where([class~="not-prose"],[class~="not-prose"] *))::marker {
+.prose
+  :where(ul > li):not(
+    :where([class~="not-prose"], [class~="not-prose"] *)
+  )::marker {
   color: var(--color-theme-secondary);
+}
+
+.prose {
+  line-height: 1.5;
 }
 
 @layer base {

@@ -3,7 +3,7 @@ title: "Hello World"
 description: "My first post — welcome to my website."
 pubDate: 2026-04-08
 category: "Life"
-tags: ["intro", "life"]
+tags: []
 draft: false
 ---
 
