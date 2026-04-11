@@ -20,7 +20,7 @@ const currentPath = Astro.url.pathname;
     <button
       id="menu-toggle"
       aria-label="Toggle menu"
-      class="relative z-[51] h-8 w-8 cursor-pointer sm:hidden"
+      class="relative z-51 h-8 w-8 cursor-pointer sm:hidden"
     >
       <span class="menu-top absolute top-[25%] block h-0.5 w-full rounded transition-all duration-300" style="background-color: var(--color-theme-light);"></span>
       <span class="menu-bot absolute top-[75%] block h-0.5 w-full rounded transition-all duration-300" style="background-color: var(--color-theme-light);"></span>
@@ -46,7 +46,7 @@ const currentPath = Astro.url.pathname;
               : `color: var(--color-theme-light);`
           }
         >
-          {label}
+          <span data-translate>{label}</span>
         </a>
       ))}
     </nav>

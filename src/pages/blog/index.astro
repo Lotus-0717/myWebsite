@@ -16,7 +16,7 @@ const allCategories = [...new Set(allPosts.map((p) => p.data.category))].sort();
   <!-- Filters -->
   <div class="mb-8 flex flex-wrap gap-4 text-sm mt-6">
     <div>
-      <span class="opacity-50 mr-2">Category:</span>
+      <span data-translate class="opacity-50 mr-2">Category:</span>
       {allCategories.map((cat) => (
         <a href={`/categories/${cat}`} class="inline-block mr-2 px-3 py-1 rounded transition-colors" style="background-color: var(--color-theme-primary); color: var(--color-theme-light);">
           {cat}
@@ -24,7 +24,7 @@ const allCategories = [...new Set(allPosts.map((p) => p.data.category))].sort();
       ))}
     </div>
     <div>
-      <span class="opacity-50 mr-2">Tags:</span>
+      <span data-translate class="opacity-50 mr-2">Tags:</span>
       {allTags.map((tag) => (
         <a href={`/tags/${tag}`} class="inline-block mr-2 px-3 py-1 rounded transition-colors border" style="border-color: var(--color-theme-secondary); color: var(--color-theme-secondary);">
           #{tag}
@@ -37,8 +37,8 @@ const allCategories = [...new Set(allPosts.map((p) => p.data.category))].sort();
   <div class="space-y-4">
     {allPosts.map((post) => (
       <a href={`/blog/${post.id}`} class="block p-5 rounded-2xl transition-all hover:opacity-90" style="background-color: var(--color-theme-primary); color: var(--color-theme-light);">
-        <h2 class="text-lg font-semibold mb-1">{post.data.title}</h2>
-        <p class="text-sm opacity-60 mb-2">{post.data.description}</p>
+        <h2 data-translate class="text-lg font-semibold mb-1">{post.data.title}</h2>
+        <p data-translate class="text-sm opacity-60 mb-2">{post.data.description}</p>
         <div class="flex items-center gap-3 text-xs opacity-50">
           <time>{post.data.pubDate.toLocaleDateString('en-US')}</time>
           <span class="px-2 py-0.5 rounded" style="background-color: var(--color-theme-secondary); color: var(--color-theme-dark);">{post.data.category}</span>

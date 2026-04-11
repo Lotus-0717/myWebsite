@@ -37,7 +37,7 @@ const experiences = [
   },
   {
     company: 'Freelancer',
-    companySub: '全職接案',
+    companySub: '',
     start: 'Oct 2019',
     end: 'Apr 2021',
     items: [
@@ -89,7 +89,7 @@ const experiences = [
         </div>
         <div class="flex items-center gap-3">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
-          <p class="text-xl">New Taipei City, Taiwan</p>
+          <p data-translate class="text-xl">New Taipei City, Taiwan</p>
         </div>
       </div>
     </SectionCard>
@@ -100,12 +100,12 @@ const experiences = [
       <SectionCard>
         {skills.map((group) => (
           <div class="flex w-full flex-col items-start gap-2">
-            <p class="inline-block px-2 py-1" style="background-color: var(--color-theme-secondary); color: var(--color-theme-dark);">
+            <p data-translate class="inline-block px-2 py-1" style="background-color: var(--color-theme-secondary); color: var(--color-theme-dark);">
               {group.category}
             </p>
             <div class="flex flex-wrap gap-2">
               {group.items.map((item) => (
-                <span class="border-2 px-2 py-1" style="border-color: var(--color-theme-secondary);">
+                <span data-translate class="border-2 px-2 py-1" style="border-color: var(--color-theme-secondary);">
                   {item}
                 </span>
               ))}
@@ -130,7 +130,7 @@ const experiences = [
               {exp.items.length > 0 && (
                 <ul class="flex list-disc flex-col gap-2 pl-5">
                   {exp.items.map((item) => (
-                    <li><strong>{item.title}</strong>: {item.content}</li>
+                    <li><strong data-translate>{item.title}</strong>: <span data-translate>{item.content}</span></li>
                   ))}
                 </ul>
               )}
@@ -144,16 +144,14 @@ const experiences = [
     </div>
 
     <!-- Recent Posts -->
-    <div>
+    <div class="relative">
       <SecTit text="Blog" />
-      <div class="flex items-center justify-end mb-4">
-        <a href="/blog" class="text-sm hover:underline" style="color: var(--color-theme-secondary);">View all &rarr;</a>
-      </div>
+      <a href="/blog" class="absolute right-0 top-3 text-sm hover:underline z-10" style="color: var(--color-theme-secondary);"><span data-translate>View all</span> &rarr;</a>
       <div class="space-y-4">
         {allPosts.map((post) => (
           <a href={`/blog/${post.id}`} class="block p-4 md:p-8 rounded-2xl transition-all hover:opacity-90" style="background-color: var(--color-theme-primary); color: var(--color-theme-light);">
-            <h3 class="font-semibold text-lg mb-1">{post.data.title}</h3>
-            <p class="text-sm opacity-60 mb-2">{post.data.description}</p>
+            <h3 data-translate class="font-semibold text-lg mb-1">{post.data.title}</h3>
+            <p data-translate class="text-sm opacity-60 mb-2">{post.data.description}</p>
             <div class="flex items-center gap-3 text-xs opacity-40">
               <time>{post.data.pubDate.toLocaleDateString('en-US')}</time>
               <span class="px-2 py-0.5 rounded" style="background-color: var(--color-theme-secondary); color: var(--color-theme-dark);">{post.data.category}</span>
@@ -165,16 +163,14 @@ const experiences = [
 
     <!-- Featured Projects -->
     {featuredProjects.length > 0 && (
-      <div>
+      <div class="relative">
         <SecTit text="Portfolio" />
-        <div class="flex items-center justify-end mb-4">
-          <a href="/portfolio" class="text-sm hover:underline" style="color: var(--color-theme-secondary);">View all &rarr;</a>
-        </div>
+        <a href="/portfolio" class="absolute right-0 top-3 text-sm hover:underline z-10" style="color: var(--color-theme-secondary);"><span data-translate>View all</span> &rarr;</a>
         <div class="grid gap-4 sm:grid-cols-2">
           {featuredProjects.map((project) => (
             <a href={`/portfolio/${project.id}`} class="block p-4 md:p-8 rounded-2xl transition-all hover:opacity-90" style="background-color: var(--color-theme-primary); color: var(--color-theme-light);">
-              <h3 class="font-semibold text-lg mb-1">{project.data.title}</h3>
-              <p class="text-sm opacity-60 mb-3">{project.data.description}</p>
+              <h3 data-translate class="font-semibold text-lg mb-1">{project.data.title}</h3>
+              <p data-translate class="text-sm opacity-60 mb-3">{project.data.description}</p>
               <div class="flex flex-wrap gap-1">
                 {project.data.tech.map((t) => (
                   <span class="px-2 py-0.5 text-xs border rounded" style="border-color: var(--color-theme-secondary); color: var(--color-theme-secondary);">{t}</span>

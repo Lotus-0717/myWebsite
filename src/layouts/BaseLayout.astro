@@ -23,6 +23,10 @@ const { title, description = '葉書宏的個人網站' } = Astro.props;
     <script is:inline>
       const saved = localStorage.getItem('theme');
       if (saved) document.documentElement.dataset.theme = saved;
+      // Apply lang from URL param early so downstream JS can read it
+      const _lp = new URLSearchParams(location.search).get('lang');
+      if (_lp === 'zh') localStorage.setItem('lang', 'zh');
+      else if (_lp === 'en' || _lp === '') localStorage.removeItem('lang');
     </script>
   </head>
   <body class="min-h-screen flex flex-col" style="background-color: var(--color-theme-dark); color: var(--color-theme-light); font-family: 'Ubuntu Mono', 'Noto Sans TC', monospace;">
@@ -32,5 +36,9 @@ const { title, description = '葉書宏的個人網站' } = Astro.props;
       <slot />
     </main>
     <Footer />
+    <script>
+      import { initTranslator } from '../scripts/translator';
+      document.addEventListener('DOMContentLoaded', initTranslator);
+    </script>
   </body>
 </html>
