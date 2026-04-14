@@ -16,12 +16,21 @@ There are no tests or linters configured.
 
 **Framework**: Astro 5 with React islands (`client:load`) and Tailwind CSS v4.
 
+### Deployment
+
+Deployed to **Vercel** via `@astrojs/vercel` adapter. Most pages are statically generated; API routes use `export const prerender = false` to opt into SSR. The `site` URL is `https://lotus-yeh.com`.
+
+Environment variable required in production: `ANTHROPIC_API_KEY` (used by `/api/translate` for the `?lang=zh` AI translation mode).
+
 ### Routing & Pages
 
 All pages live in `src/pages/`. Dynamic routes:
 - `/blog/[id]` — individual blog posts
 - `/portfolio/[id]` — individual portfolio projects
 - `/categories/[category]` and `/tags/[tag]` — filtered blog listings
+- `/tools/` — standalone interactive tools (currently `word-counter`, `css-triangle`)
+
+The `/api/translate` SSR endpoint powers the `?lang=zh` AI translation feature on the homepage.
 
 ### Content Collections
 
