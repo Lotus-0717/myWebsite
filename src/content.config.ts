@@ -12,6 +12,7 @@ const blog = defineCollection({
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
     cover: z.string().optional(),
+    descriptionZh: z.string().optional(),
   }),
 });
 
@@ -24,6 +25,7 @@ const portfolio = defineCollection({
     url: z.string().url().optional(),
     repo: z.string().url().optional(),
     cover: z.string().optional(),
+    descriptionZh: z.string().optional(),
     featured: z.boolean().default(false),
     sortOrder: z.number().default(0),
     status: z.enum(['completed', 'in-progress', 'archived']).default('completed'),

@@ -15,7 +15,13 @@ const { project } = Astro.props;
 const { Content } = await render(project);
 ---
 
-<BaseLayout title={`${project.data.title} | Lotus Yeh`} description={project.data.description}>
+<BaseLayout
+  title={`${project.data.title} | Lotus Yeh`}
+  description={project.data.description}
+  descriptionZh={project.data.descriptionZh}
+  image={project.data.cover}
+  type="website"
+>
   <a href="/portfolio" class="text-sm hover:underline mb-6 inline-block" style="color: var(--color-theme-secondary);">&larr; <span data-translate>Back to Portfolio</span></a>
 
   <SectionCard>

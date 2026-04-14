@@ -1,6 +1,7 @@
 ---
 title: "Hello World"
 description: "My first post — welcome to my website."
+descriptionZh: "第一篇文章 — 歡迎來到我的網站。"
 pubDate: 2026-04-08
 category: "Life"
 tags: []

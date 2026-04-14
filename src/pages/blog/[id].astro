@@ -15,7 +15,14 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<BaseLayout title={`${post.data.title} | Lotus Yeh`} description={post.data.description}>
+<BaseLayout
+  title={`${post.data.title} | Lotus Yeh`}
+  description={post.data.description}
+  descriptionZh={post.data.descriptionZh}
+  image={post.data.cover}
+  type="article"
+  pubDate={post.data.pubDate}
+>
   <a href="/blog" class="text-sm hover:underline mb-6 inline-block" style="color: var(--color-theme-secondary);">&larr; <span data-translate>Back to Blog</span></a>
 
   <SectionCard>
