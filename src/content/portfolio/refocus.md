@@ -7,7 +7,6 @@ url: "https://chromewebstore.google.com/detail/refocus/obmclnbkajfhbkgmjnclfciip
 repo: "https://github.com/Lotus-0717/ReFocus"
 featured: true
 sortOrder: 1
-status: "in-progress"
 cover: /images/portfolio/ReFocus/icon.svg
 images:
   - /images/portfolio/ReFocus/preview-1.png

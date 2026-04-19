@@ -6,7 +6,6 @@ tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Sanity CMS", "Swiper"]
 url: "https://www.seclusion-of-sage.com/"
 featured: true
 sortOrder: 2
-status: "completed"
 cover: /images/portfolio/seclusionOfSage/logo.png
 images:
   - /images/portfolio/seclusionOfSage/preview-1.png

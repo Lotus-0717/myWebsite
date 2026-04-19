@@ -36,7 +36,7 @@ The `/api/translate` SSR endpoint powers the `?lang=zh` AI translation feature o
 
 Defined in `src/content.config.ts`. Two collections:
 - `blog` — Markdown files in `src/content/blog/`. Required frontmatter: `title`, `description`, `pubDate`, `category`, `tags`, `draft`.
-- `portfolio` — Markdown files in `src/content/portfolio/`. Required frontmatter: `title`, `description`, `tech[]`, `status` (`completed` | `in-progress` | `archived`), `featured`, `sortOrder`.
+- `portfolio` — Markdown files in `src/content/portfolio/`. Required frontmatter: `title`, `description`, `tech[]`, `featured`, `sortOrder`.
 
 ### Theming
 

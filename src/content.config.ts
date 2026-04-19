@@ -29,7 +29,6 @@ const portfolio = defineCollection({
     descriptionZh: z.string().optional(),
     featured: z.boolean().default(false),
     sortOrder: z.number().default(0),
-    status: z.enum(['completed', 'in-progress', 'archived']).default('completed'),
   }),
 });
 

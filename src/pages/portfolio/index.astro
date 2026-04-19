@@ -25,16 +25,6 @@ const projects = (await getCollection('portfolio'))
         <div class="flex flex-col min-w-0 flex-1">
           <div class="flex items-start justify-between mb-1 gap-2">
             <h2 data-translate class="text-lg font-semibold leading-tight">{project.data.title}</h2>
-            <span data-translate class="text-xs px-2 py-0.5 rounded shrink-0" style={
-              project.data.status === 'completed'
-                ? 'background-color: var(--color-theme-secondary); color: var(--color-theme-dark);'
-                : project.data.status === 'in-progress'
-                ? 'border: 1px solid var(--color-theme-secondary); color: var(--color-theme-secondary);'
-                : 'opacity: 0.5;'
-            }>
-              {project.data.status === 'completed' ? 'Completed' :
-               project.data.status === 'in-progress' ? 'In Progress' : 'Archived'}
-            </span>
           </div>
           <p data-translate class="text-sm opacity-60 mb-3 line-clamp-2">{project.data.description}</p>
           <div class="flex flex-wrap gap-1 mt-auto">

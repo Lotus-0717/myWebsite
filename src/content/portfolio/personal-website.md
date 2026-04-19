@@ -7,7 +7,6 @@ url: "https://lotus-yeh.com"
 repo: "https://github.com/Lotus-0717/myWebsite"
 featured: true
 sortOrder: 3
-status: "completed"
 ---
 
 ## About This Project
