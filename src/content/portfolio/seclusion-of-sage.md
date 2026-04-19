@@ -7,6 +7,13 @@ url: "https://www.seclusion-of-sage.com/"
 featured: true
 sortOrder: 2
 status: "completed"
+cover: /images/portfolio/seclusionOfSage/logo.png
+images:
+  - /images/portfolio/seclusionOfSage/preview-1.png
+  - /images/portfolio/seclusionOfSage/preview-2.png
+  - /images/portfolio/seclusionOfSage/preview-3.png
+  - /images/portfolio/seclusionOfSage/preview-4.png
+  - /images/portfolio/seclusionOfSage/preview-5.png
 ---
 
 ## About This Project

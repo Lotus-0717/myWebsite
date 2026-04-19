@@ -6,7 +6,7 @@ tech: ["Astro", "React", "Tailwind CSS", "TypeScript", "Claude API"]
 url: "https://lotus-yeh.com"
 repo: "https://github.com/Lotus-0717/myWebsite"
 featured: true
-sortOrder: 1
+sortOrder: 3
 status: "completed"
 ---
 
