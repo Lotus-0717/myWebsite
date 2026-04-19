@@ -1,10 +1,10 @@
 ---
-title: "Refocus devlog (1)"
+title: "ReFocus devlog (1)"
 description: "Help me regain my focus."
 descriptionZh: "我用 Chrome 擴充功能追蹤自己浪費在社群媒體上的時間，試著把專注力找回來。"
 pubDate: 2026-04-11
 category: "Dev"
-tags: ["Refocus", "extension"]
+tags: ["ReFocus", "extension"]
 draft: false
 ---
 

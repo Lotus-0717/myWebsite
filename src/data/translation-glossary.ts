@@ -17,5 +17,5 @@ export const glossary: Record<string, GlossaryEntry> = {
   GitHub: { preserve: true },
   Vercel: { preserve: true },
   Swiper: { preserve: true },
-  Refocus: { preserve: true },
+  ReFocus: { preserve: true },
 };
