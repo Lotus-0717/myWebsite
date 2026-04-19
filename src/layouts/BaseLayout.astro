@@ -63,6 +63,15 @@ const type = typeProp ?? 'website';
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4ZBKKBP897"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-4ZBKKBP897');
+    </script>
+
     <script is:inline>
       const saved = localStorage.getItem('theme');
       if (saved) document.documentElement.dataset.theme = saved;
