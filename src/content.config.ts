@@ -12,7 +12,6 @@ const blog = defineCollection({
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
     cover: z.string().optional(),
-    descriptionZh: z.string().optional(),
   }),
 });
 
@@ -26,7 +25,6 @@ const portfolio = defineCollection({
     repo: z.string().url().optional(),
     cover: z.string().optional(),
     images: z.array(z.string()).optional(),
-    descriptionZh: z.string().optional(),
     featured: z.boolean().default(false),
     sortOrder: z.number().default(0),
   }),

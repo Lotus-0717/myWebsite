@@ -1,7 +1,6 @@
 ---
 title: "Seclusion of Sage"
 description: "A commercial interior styling and space rental studio website, built solo end-to-end — from client communication to design and development."
-descriptionZh: "棲仙｜商業空間美學與場地租借工作室官網，從客戶溝通、視覺設計到全端開發，全程獨立完成。"
 tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Sanity CMS", "Swiper"]
 url: "https://www.seclusion-of-sage.com/"
 featured: true

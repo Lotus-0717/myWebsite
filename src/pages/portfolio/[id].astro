@@ -19,17 +19,16 @@ const { Content } = await render(project);
 <BaseLayout
   title={`${project.data.title} | Lotus Yeh`}
   description={project.data.description}
-  descriptionZh={project.data.descriptionZh}
   image={project.data.cover}
   type="website"
 >
-  <a href="/portfolio" class="text-sm hover:underline mb-6 inline-block" style="color: var(--color-theme-secondary);">&larr; <span data-translate>Back to Portfolio</span></a>
+  <a href="/portfolio" class="text-sm hover:underline mb-6 inline-block" style="color: var(--color-theme-secondary);">&larr; <span>Back to Portfolio</span></a>
 
   <SectionCard>
     <article class="w-full">
       <header class="mb-8">
-        <h1 data-translate class="text-3xl font-bold mb-2">{project.data.title}</h1>
-        <p data-translate class="opacity-60 mb-4">{project.data.description}</p>
+        <h1 class="text-3xl font-bold mb-2">{project.data.title}</h1>
+        <p class="opacity-60 mb-4">{project.data.description}</p>
 
         <div class="flex flex-wrap gap-2 mb-4">
           {project.data.tech.map((t) => (
@@ -40,12 +39,12 @@ const { Content } = await render(project);
         <div class="flex gap-4 text-sm">
           {project.data.url && (
             <a href={project.data.url} target="_blank" rel="noopener noreferrer" class="hover:underline" style="color: var(--color-theme-secondary);">
-              <span data-translate>Live Demo</span> &nearr;
+              <span>Live Demo</span> &nearr;
             </a>
           )}
           {project.data.repo && (
             <a href={project.data.repo} target="_blank" rel="noopener noreferrer" class="hover:underline" style="color: var(--color-theme-secondary);">
-              <span data-translate>Source Code</span> &nearr;
+              <span>Source Code</span> &nearr;
             </a>
           )}
         </div>
@@ -57,7 +56,7 @@ const { Content } = await render(project);
         </div>
       )}
 
-      <div data-translate-block class="prose prose-invert max-w-none">
+      <div class="prose prose-invert max-w-none">
         <Content />
       </div>
     </article>

@@ -1,7 +1,6 @@
 ---
 title: "ReFocus"
 description: "A Chrome extension that tracks time spent on social media and nudges you to refocus with a rolling-window alert system."
-descriptionZh: "Chrome 擴充功能，追蹤社群媒體使用時間，並以滾動視窗演算法在你超標時發出提醒，幫助你重新找回專注。"
 tech: ["Chrome Extension", "Manifest V3", "JavaScript", "Web Audio API", "CSS"]
 url: "https://chromewebstore.google.com/detail/refocus/obmclnbkajfhbkgmjnclfciipgehpcif"
 repo: "https://github.com/Lotus-0717/ReFocus"
