@@ -5,7 +5,7 @@ tech: ["Chrome Extension", "Manifest V3", "JavaScript", "Web Audio API", "CSS"]
 url: "https://chromewebstore.google.com/detail/refocus/obmclnbkajfhbkgmjnclfciipgehpcif"
 repo: "https://github.com/Lotus-0717/ReFocus"
 featured: true
-sortOrder: 1
+sortOrder: 2
 cover: /images/portfolio/ReFocus/icon.svg
 images:
   - /images/portfolio/ReFocus/preview-1.png

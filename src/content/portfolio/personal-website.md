@@ -5,7 +5,7 @@ tech: ["Astro", "React", "Tailwind CSS", "TypeScript"]
 url: "https://lotus-yeh.com"
 repo: "https://github.com/Lotus-0717/myWebsite"
 featured: true
-sortOrder: 3
+sortOrder: 4
 ---
 
 ## About This Project
